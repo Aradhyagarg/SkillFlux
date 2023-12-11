@@ -168,7 +168,7 @@ export const resetPassword = catchAsyncError( async(req, res, next) => {
     })
 });
 
-export const addtoplaylist = catchAsyncError( async(req, res, next) => {
+export const addToPlayList = catchAsyncError( async(req, res, next) => {
     const user = await User.findById(req.user._id);
     const course = await Course.findById(req.body.id);
 
@@ -193,7 +193,7 @@ export const addtoplaylist = catchAsyncError( async(req, res, next) => {
     })
 })
 
-export const removefromplaylist = catchAsyncError( async(req, res, next) => {
+export const removeFromPlayList = catchAsyncError( async(req, res, next) => {
     const user = await User.findById(req.user._id);
     const course = await Course.findById(req.query.id);
     if(!course) return next(new ErrorHandler("Invalid Course Id", 404));
